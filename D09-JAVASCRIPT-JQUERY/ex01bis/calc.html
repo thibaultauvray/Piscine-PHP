@@ -1,0 +1,89 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<title>Calculatrice</title>
+</head>
+<body>
+	<input type="text" id="gauche" />
+	<select name="select" id="select">
+  		<option value="+">+</option> 
+  		<option value="-" selected>-</option>
+  		<option value="*">*</option>
+  		<option value="%">%</option>
+   		<option value="/">/</option>
+	</select>
+	<input type="text" id="droite">
+	<input type="submit" value="Try me!" id="calc">
+	<script type="text/javascript">
+  $(document).ready(function()
+    {
+        function strIsEmpty(str) {
+  return (str.length === 0 || !str.trim());
+  }
+        setInterval(function () {alert("Please, use me...")}, 30000);
+
+      $('#calc').click(function()
+      {
+        var ope = $('#select').val();
+        var exp=new RegExp(/^([0-9]*)$/);
+        var exp2=new RegExp(/^([0-9]*)$/);
+      if (!strIsEmpty(document.getElementById("gauche").value) && !strIsEmpty(document.getElementById("droite").value))
+      {
+      if (exp.test($('#gauche').val()) && exp2.test($('#droite').val())) 
+      {
+        if (ope == '+')
+        {
+          alert(parseInt($('#gauche').val()) + parseInt($('#droite').val()));
+          console.log(parseInt($('#gauche').val()) + parseInt($('#droite').val()));
+        }  
+        if (ope == '-')
+        {
+          alert(parseInt($('#gauche').val()) - parseInt($('#droite').val()));
+          console.log(parseInt($('#gauche').val()) - parseInt($('#droite').val()));
+        }   
+        if (ope == '/')
+        {
+          if ($('#droite').val() == '0')
+          {
+            alert("It’s over 9000!");           
+            console.log("It’s over 9000");
+
+          }
+          else
+          {
+          alert(parseInt($('#gauche').val()) / parseInt($('#droite').val()));
+          console.log(parseInt($('#gauche').val()) / parseInt($('#droite').val()));
+        }
+        }         
+        if (ope == '%')
+        {
+          if ($('#droite').val() == '0')
+          {
+            alert("It’s over 9000!");
+            console.log("It’s over 9000");
+          }
+          else
+          {
+            alert(parseInt($('#gauche').val()) % parseInt($('#droite').val()));
+            console.log(parseInt($('#gauche').val()) % parseInt($('#droite').val()));
+         }
+        }   
+        if (ope == '*')
+        {
+          alert(parseInt($('#gauche').val()) * parseInt($('#droite').val()));
+          console.log(parseInt($('#gauche').val()) * parseInt($('#droite').val()));
+        }  
+        } 
+        else
+          alert("Erreur :'(");
+        }
+        else
+          alert("Erreur :'(");
+      })
+
+    })
+	</script>
+</body>
+</html>

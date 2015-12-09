@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Balloon</title>
+	<style>
+		.balloon{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			border-radius: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="balloon" id="balloon">
+		
+	</div>
+	<script type="text/javascript">
+	     var el = document.getElementById("balloon"); 
+	     el.addEventListener("click", gonfler, false); 
+	     el.addEventListener("mouseout", degonfler, false);
+	     var i = 0;
+	     function gonfler()
+	     {
+	     	var elemen = document.getElementById("balloon");
+	     	var add = elemen.style.width;
+	     	elemen.style.width = elemen.offsetWidth+10+'px';
+		    elemen.style.height = elemen.offsetHeight+10+'px';
+		    if (elemen.style.backgroundColor == '' || elemen.style.backgroundColor == 'red')
+		   		elemen.style.backgroundColor = 'green';
+		   	else if (elemen.style.backgroundColor == 'green')
+		   		elemen.style.backgroundColor = 'blue';
+		   	else if (elemen.style.backgroundColor == 'blue')
+		   	{
+				elemen.style.backgroundColor = 'red';
+			}
+
+
+		    if (elemen.style.width > '420px')
+		    {
+		    	elemen.style.height = '200px'
+
+		    	elemen.style.width = '200px'
+		    }
+
+	     }
+	     function degonfler()
+	     {
+	     	var elemen = document.getElementById("balloon");
+	     	if (elemen.style.width > '200px')
+	     	{
+	     		elemen.style.width = elemen.offsetWidth-5+'px';
+	     		elemen.style.height = elemen.offsetHeight-5+'px';
+
+	     	}
+		    	if (elemen.style.backgroundColor == '' || elemen.style.backgroundColor == 'red')
+		    	{
+					elemen.style.backgroundColor = 'blue';
+		    	}
+		    	else if (elemen.style.backgroundColor == 'blue')
+		    	{
+					elemen.style.backgroundColor = 'green';
+		    	}
+		    	else if (elemen.style.backgroundColor == 'green')
+
+					elemen.style.backgroundColor = 'red';
+	     }
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculatrice</title>
+</head>
+<body>
+	<input type="text" id="gauche" />
+	<select name="select" id="select">
+  		<option value="+">+</option> 
+  		<option value="-" selected>-</option>
+  		<option value="*">*</option>
+  		<option value="%">%</option>
+   		<option value="/">/</option>
+	</select>
+	<input type="text" id="droite">
+	<input type="submit" value="Try me!" id="calc">
+	<script type="text/javascript">
+	var el = document.getElementById("calc");
+	el.addEventListener("click", calcule);
+	setInterval(function () {alert("Please, use me...")}, 30000);
+  function strIsEmpty(str) {
+  return (str.length === 0 || !str.trim());
+  }
+	function calcule()
+	{
+    var lemot = document.getElementById("gauche").value;
+    if (!strIsEmpty(lemot) && !strIsEmpty(document.getElementById("droite").value))
+    {
+  		var exp=new RegExp(/^([0-9]*)$/);
+  		var exp2=new RegExp(/^([0-9]*)$/);
+  		if (exp.test(document.getElementById("gauche").value) && exp2.test(document.getElementById("droite").value)) 
+  		{
+  			if (document.getElementById("select").value == '+')
+  			{
+  				alert(parseInt(document.getElementById("gauche").value) + parseInt(document.getElementById("droite").value));
+  				console.log(parseInt(document.getElementById("gauche").value) + parseInt(document.getElementById("droite").value));
+  			}
+  			if (document.getElementById("select").value == '-')
+  			{
+  				alert(parseInt(document.getElementById("gauche").value) - parseInt(document.getElementById("droite").value));
+  				console.log(parseInt(document.getElementById("gauche").value) - parseInt(document.getElementById("droite").value));
+  			}
+  			if (document.getElementById("select").value == '*')
+  			{
+  				alert(parseInt(document.getElementById("gauche").value) * parseInt(document.getElementById("droite").value));
+  				console.log(parseInt(document.getElementById("gauche").value) * parseInt(document.getElementById("droite").value));
+  			}
+    		if (document.getElementById("select").value == '/')
+  			{
+  				if (parseInt(document.getElementById("droite").value) == 0)
+  				{
+  					alert("It’s over 9000");
+  					console.log("It’s over 9000");
+  				}
+  				else
+  				{
+  					alert(parseInt(document.getElementById("gauche").value) / parseInt(document.getElementById("droite").value));
+  					console.log(parseInt(document.getElementById("gauche").value) / parseInt(document.getElementById("droite").value));
+  				}
+  			}
+  			if (document.getElementById("select").value == '%')
+  			{
+  				if (parseInt(document.getElementById("droite").value) == 0)
+  				{
+  					alert("It’s over 9000");
+  					console.log("It’s over 9000");
+  				}
+  				else
+  				{
+  					alert(parseInt(document.getElementById("gauche").value) % parseInt(document.getElementById("droite").value));
+  					console.log(parseInt(document.getElementById("gauche").value) % parseInt(document.getElementById("droite").value));
+  				}
+  			}
+  		}
+  		else 
+  		{
+  			alert("Error :("); 
+  		}
+    }
+    else
+    {
+      alert("Error :(");
+    }
+	}
+	</script>
+</body>
+</html>

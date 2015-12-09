@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>AJAX</title>
+	</head>
+		<style>
+		#ft_list div{
+   border: 1px solid #e2e2e2;
+    height: 100px;
+    padding-top: 79px;
+    text-align: center;
+    width: 300px;
+		}
+		#new{
+			  border-radius: 6px;
+    font-size: 18px;
+    line-height: 1.33333;
+    padding: 10px 16px;
+        background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+		}
+
+	</style>
+	<body>
+			<button type='button' id="new">New</button>
+		<div id='ft_list'>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src='todo.js'></script>
+	 
+
+		<script>
+			function del(i)
+{
+	if (confirm("Avez vous vraiment finis cette tache ?")) 
+	{ 
+		var ide = $(i).attr('id');
+		$.ajax({
+			url : 'delete.php',
+			data : 'id='+ ide,
+			type : 'GET',
+			dataType : 'html',
+			success : function(code_html, statut){ // code_html contient le HTML renvoyé
+				$(i).remove();
+	       }
+		})
+	}
+}
+		</script>
+	</body>
+</html>

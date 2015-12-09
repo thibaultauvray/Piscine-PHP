@@ -1,0 +1,19 @@
+
+<- Vector ----------------------------------------------------------------------
+This class represent direction. This class wait a rray with this key :
+	-> 'dest' : Vertex from the Vertex classof the vector destination
+	-> 'orig' : Original vectex
+
+She contains this methods :
+	=> float magnitude() : return the length of vector
+	=> Vector normalize() : return the normalize vector. If already normalize
+return a fresh copy of it.
+	=> Vector add( Vector $rhs ) : return the sum of two vector
+	=> Vector sub( Vector $rhs ) : return the difference of two vector
+	=> Vector opposite() : return opposite vector
+	=> Vector scalarProduct( $k) : return the vector with scalar
+	=> float dotProduct( Vector $rhs) : return the productScalar of two vector
+	=> float cos( vector $rhs ) : return cosinus of the angle
+	=> Vector crossProduct( vector $rhs ) : return the crossproduct of two vector 
+	(right hand repere)
+---------------------------------------------------------------------- Vector ->

@@ -1,0 +1,78 @@
+		table
+		{
+			width: 100%;
+			height: 100%;
+		}
+		td, th /* Mettre une bordure sur les td ET les th */
+		{
+			text-align: center;
+			position: relative;
+    		border: 1px solid black;
+		}
+		h2{
+			margin: 0;
+			font-size: 1vw;
+		}
+		h1{
+			text-align: center;
+			color: white;
+		}
+		.no_border{
+			border: none;
+		}
+		.num{
+			position: absolute;
+			text-align: left;
+			margin: 0;
+			bottom: 0;
+		}
+		.masse{
+			position: absolute;
+			text-align: right;
+			margin: 0;
+			top: 0;
+			right: 0;
+			margin-right: 3px;
+		}
+		td p{
+			font-size: 1vw;
+		}
+		.green{
+			background-color: #22FF22;
+		}
+		.green_bold{
+			background-color: #91E39F;
+		}
+		.orange{
+			background-color: #FFD455;
+		}
+		.grey{
+			background-color: #E4C9C9;
+		}
+		.yellow{
+			background-color: #FFFF62;
+		}
+		.blue_white{
+			background-color: #AEE4D6;
+		}
+		.blue_bold{
+			background-color: #777777;
+		}
+		.magent{
+			background-color: #56F2D8;
+		}
+		.bold_orange{
+			background-color: #FFC9AD;
+		}
+		.violet{
+			background-color: #F1C9E4;
+		}
+		img{
+			width: 100px;
+			float: left;
+			position: relative;
+		}
+		body{
+			background-image: url(https://signin.intrav2.42.fr/assets/background_login-67c25f7327fba373d9e8cb2ba29aa4aa.jpg);
+			
+		}
